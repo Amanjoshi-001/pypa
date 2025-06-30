@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Wash CRM - Customer Feedback</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5bd23; margin: 0; padding: 0; }
+        .container { max-width: 900px; margin: 40px auto; background: #e1a930; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+        h2 { text-align: center; color: #333; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+        .rating-group { display: flex; gap: 10px; margin-top: 5px; }
+        .yesno-group { display: flex; gap: 20px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px 20px; background: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+    <link rel="stylesheet" href="crm.css">
+</head>
+<body>
+    <nav>
+        <img src="data:image/png;base64,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" alt="">
+    </nav>
+    <div class="container">
+        <h2>HYUNDAI Car Wash Customer Feedback</h2>
+        <form>
+            <label for="customerName">Customer Name</label>
+            <input type="text" id="customerName" name="customerName" required>
+
+            <label for="carModel">Car Model</label>
+            <input type="text" id="carModel" name="carModel" required>
+
+            <label for="washDate">Date of Wash</label>
+            <input type="date" id="washDate" name="washDate" required>
+
+            <label>Cleaning Quality (1-10)</label>
+            <div class="rating-group">
+                <select name="cleaningRating" required>
+                    <option value="">Select</option>
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+
+            <label>Maintenance (1-10)</label>
+            <div class="rating-group">
+                <select name="maintenanceRating" required>
+                    <option value="">Select</option>
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+
+            <label>Customer Interaction Area Cleanliness (1-10)</label>
+            <div class="rating-group">
+                <select name="interactionAreaRating" required>
+                    <option value="">Select</option>
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+
+            <label>Staff Behaviour (1-10)</label>
+            <div class="rating-group">
+                <select name="staffBehaviourRating" required>
+                    <option value="">Select</option>
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+
+            <label>Was the service completed on time?</label>
+            <div class="yesno-group">
+                <label><input type="radio" name="onTime" value="Yes" required> Yes</label>
+                <label><input type="radio" name="onTime" value="No"> No</label>
+            </div>
+
+            <label>Would you recommend us to others?</label>
+            <div class="yesno-group">
+                <label><input type="radio" name="recommend" value="Yes" required> Yes</label>
+                <label><input type="radio" name="recommend" value="No"> No</label>
+            </div>
+
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" name="comments" rows="3"></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthy Humans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f8fb; margin: 0; }
+        header { background: #2d8f85; color: #fff; padding: 20px 0; text-align: center; }
+        nav { text-align: right; padding: 10px 30px; background: #e6f2ef; }
+        nav a { margin-left: 20px; color: #2d8f85; text-decoration: none; font-weight: bold; }
+        .container { max-width: 900px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+        h2 { color: #2d8f85; }
+        .entities { display: flex; gap: 40px; margin-top: 30px; }
+        .entity { flex: 1; background: #f0faf8; padding: 20px; border-radius: 8px; }
+        label { display: block; margin-top: 10px; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+        .doctor-list { margin-top: 30px; }
+        .doctor-card { background: #e6f2ef; padding: 15px; border-radius: 6px; margin-bottom: 15px; }
+        .contact-btn { background: #2d8f85; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="health.css">
+     <script src="health.js"></script>
+    <header>
+        <h1>Healthy Humans</h1>
+    </header>
+    <nav>
+        <a href="#signup">Sign Up</a>
+        <a href="#login">Login</a>
+    </nav>
+    <div class="container">
+        <h2>Choose Your Role</h2>
+        <div class="entities">
+            <!-- Patient Entity -->
+            <div class="entity">
+                <h3>Patient</h3>
+                <form id="patient-form">
+                    <label for="p-name">Name</label>
+                    <input type="text" id="p-name" name="p-name" required>
+                    
+                    <label for="p-issue">Health Issue Type</label>
+                    <select id="p-issue" name="p-issue" required>
+                        <option value="">Select Issue</option>
+                        <option value="General">General</option>
+                        <option value="Cardiology">Cardiology</option>
+                        <option value="Dermatology">Dermatology</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    
+                    <button type="submit" class="contact-btn">Find Doctor</button>
+                </form>
+            </div>
+            <!-- Doctor Entity -->
+            <div class="entity">
+                <h3>Doctor</h3>
+                <form id="doctor-form">
+                    <label for="d-name">Name</label>
+                    <input type="text" id="d-name" name="d-name" required>
+                    
+                    <label for="d-speciality">Speciality</label>
+                    <select id="d-speciality" name="d-speciality" required>
+                        <option value="">Select Speciality</option>
+                        <option value="General Physician">General Physician</option>
+                        <option value="Cardiologist">Cardiologist</option>
+                        <option value="Dermatologist">Dermatologist</option>
+                        <option value="Orthopedic">Orthopedic</option>
+                        <option value="Pediatrician">Pediatrician</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    
+                    <label for="d-hospital">Hospital</label>
+                    <input type="text" id="d-hospital" name="d-hospital" required>
+                    
+                    <button type="submit" class="contact-btn">Register</button>
+                </form>
+            </div>
+        </div>
+        <!-- Doctor List Example -->
+        <div class="doctor-list">
+            <h2>Nearby Doctors</h2>
+            <div class="doctor-card">
+                <strong>Dr. Priya Sharma</strong> - Cardiologist<br>
+                Hospital: City Heart Care<br>
+                Fees: ₹500<br>
+                Available in: 30 mins<br>
+                <button class="contact-btn">Contact</button>
+            </div>
+            <div class="doctor-card">
+                <strong>Dr. Amit Verma</strong> - General Physician<br>
+                Hospital: Green Valley Hospital<br>
+                Fees: ₹300<br>
+                Available in: 15 mins<br>
+                <button class="contact-btn">Contact</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

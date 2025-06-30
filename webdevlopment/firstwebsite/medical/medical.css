@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 128, 0.6), rgba(255, 255, 255, 0.4)), 
+              url('background.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.container h1 {
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn {
+  background-color: #0077cc;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #005fa3;
+}
+
+.signup-btn {
+  background-color: #00aaff;
+  color: white;
+}
+
+.signup-btn:hover {
+  background-color: #008ecc;
+}
+
+.guest-btn {
+  background-color: #cccccc;
+  color: #003366;
+}
+
+.guest-btn:hover {
+  background-color: #bbbbbb;
+}
+.bottom-image {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  z-index: 0;
+  opacity: 0.9;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.bottom-image img {
+  max-width: 300px;
+  height: auto;
+  pointer-events: none;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+.bottom-image p {
+  color: #003366;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+

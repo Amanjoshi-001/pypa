@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Human Health - Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 128, 0.6), rgba(255, 255, 255, 0.4)), url('background.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .container h1 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-btn {
+      background-color: #0077cc;
+      color: white;
+    }
+
+    .login-btn:hover {
+      background-color: #005fa3;
+    }
+
+    .signup-btn {
+      background-color: #00aaff;
+      color: white;
+    }
+
+    .signup-btn:hover {
+      background-color: #008ecc;
+    }
+
+    .guest-btn {
+      background-color: #cccccc;
+      color: #003366;
+    }
+
+    .guest-btn:hover {
+      background-color: #bbbbbb;
+    }
+  </style>
+</head>
+<body>
+    <link rel="stylesheet" href="medical.css">
+    <script src="medical.js"></script>
+  <div class="container">
+    <h1>Welcome to Human Health</h1>
+    <button class="btn login-btn" onclick="navigate('login.html')">Log In</button>
+    <button class="btn signup-btn" onclick="navigate('signup.html')">Sign Up</button>
+    <button class="btn guest-btn" onclick="navigate('guest.html')">Continue as Guest</button>
+  </div>
+  <div class="bottom-image">
+   
+  <img src="https://www.shutterstock.com/image-vector/collection-scenes-doctor-patient-medical-260nw-2342714913.jpg" alt="Doctor and Patient Illustration">
+</div>
+
+
+  <script>
+    function navigate(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>
